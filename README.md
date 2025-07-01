@@ -2,6 +2,11 @@
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.9.
 
+1. Have node v20 installed
+2. Run `npm install`
+3. Run `ng serve`
+4. Access `localhost:4200`
+
 ## Development server
 
 To start a local development server, run:
