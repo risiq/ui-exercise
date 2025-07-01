@@ -1,0 +1,11 @@
+<form (ngSubmit)="save()">
+  <label>Title: <input [(ngModel)]="model.title" name="title" required></label><br>
+  <label>Status:
+    <select [(ngModel)]="model.status" name="status">
+      <option value="todo">To Do</option>
+      <option value="done">Done</option>
+    </select>
+  </label><br>
+  <label>Due Date: <input type="date" [(ngModel)]="model.dueDate" name="dueDate"></label><br>
+  <button type="submit">Save</button>
+</form>
