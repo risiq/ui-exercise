@@ -1,9 +1,20 @@
-import { Injectable } from '@angular/core';
-import { Task } from './task.model';
+import {Injectable} from '@angular/core';
+import {Task} from './task.model';
 
-@Injectable({ providedIn: 'root' })
+@Injectable({providedIn: 'root'})
 export class TaskService {
-  private tasks: Task[] = [];
+  private tasks: Task[] = [{
+    "title": "Wäsche machen",
+    "status": "todo",
+    "dueDate": "2025-07-03",
+    "id": 1
+  }, {"title": "Mit dem Hund spazieren", "status": "todo", "dueDate": "2025-07-04", "id": 2}, {
+    "title": "Rasen mähen",
+    "status": "todo",
+    "dueDate": "2025-07-05",
+    "id": 3
+  },
+    {"title": "Auto zur Werkstatt bringen", "status": "todo", "dueDate": "2025-07-09", "id": 4}];
   private nextId = 1;
 
   getTasks(): Task[] {
@@ -11,7 +22,7 @@ export class TaskService {
   }
 
   addTask(task: Omit<Task, 'id'>): void {
-    this.tasks.push({ ...task, id: this.nextId++ });
+    this.tasks.push({...task, id: this.nextId++});
   }
 
   updateTask(id: number, updated: Task): void {
