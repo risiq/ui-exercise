@@ -3,11 +3,13 @@ import {ActivatedRoute, Router} from '@angular/router';
 import {TaskService} from '../task.service';
 import {Task} from '../task.model';
 import {FormsModule} from '@angular/forms';
+import {MatButton} from '@angular/material/button';
 
 @Component({
   selector: 'app-task-form',
   imports: [
-    FormsModule
+    FormsModule,
+    MatButton
   ],
   templateUrl: './task-form.component.html'
 })

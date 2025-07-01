@@ -2,11 +2,13 @@ import {Component, inject} from '@angular/core';
 import {Router} from '@angular/router';
 import {TaskService} from '../task.service';
 import {FormsModule} from '@angular/forms';
+import {MatButton} from '@angular/material/button';
 
 @Component({
   selector: 'app-task-list',
   imports: [
-    FormsModule
+    FormsModule,
+    MatButton
   ],
   templateUrl: './task-list.component.html'
 })

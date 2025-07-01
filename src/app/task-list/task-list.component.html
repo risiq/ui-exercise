@@ -1,19 +1,45 @@
-<div>
-  <h2>Task List</h2>
-  <label>Filter:
-    <select [(ngModel)]="filter">
+<div class="max-w-xl mx-auto p-6 bg-white rounded-lg shadow-md">
+  <h2 class="text-2xl font-bold mb-4 text-gray-800">Task List</h2>
+  <label class="block mb-4 text-gray-700 font-medium"
+  >Filter:
+    <select
+      [(ngModel)]="filter"
+      class="ml-2 px-2 py-1 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-400"
+    >
       <option value="all">All</option>
       <option value="todo">To Do</option>
       <option value="done">Done</option>
     </select>
   </label>
-  <button (click)="router.navigate(['/create'])">Add Task</button>
+  <button
+    mat-flat-button
+    (click)="router.navigate(['/create'])"
+    class="mb-4 bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded transition"
+  >
+    Add Task
+  </button>
   <ul>
     @for (task of filteredTasks; track task.id) {
-      <li>
-        <span>{{ task.title }} - {{ task.status }}</span>
-        <button (click)="edit(task.id)">Edit</button>
-        <button (click)="delete(task.id)">Delete</button>
+      <li
+        class="flex items-center justify-between py-2 px-3 mb-2 bg-gray-50 rounded hover:bg-gray-100"
+      >
+        <span class="text-gray-700">{{ task.title }} - {{ task.status }}</span>
+        <div class="space-x-2">
+          <button
+            mat-flat-button
+            (click)="edit(task.id)"
+            class="bg-yellow-500 hover:bg-yellow-600 text-white py-1 px-3 rounded transition"
+          >
+            Edit
+          </button>
+          <button
+            mat-flat-button
+            (click)="delete(task.id)"
+            class="bg-red-500 hover:bg-red-600 text-white py-1 px-3 rounded transition"
+          >
+            Delete
+          </button>
+        </div>
       </li>
     }
   </ul>

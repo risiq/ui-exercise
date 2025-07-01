@@ -1,11 +1,38 @@
-<form (ngSubmit)="save()">
-  <label>Title: <input [(ngModel)]="model.title" name="title" required></label><br>
-  <label>Status:
-    <select [(ngModel)]="model.status" name="status">
+<form (ngSubmit)="save()" class="max-w-md mx-auto p-6 bg-white rounded-lg shadow-md space-y-4">
+  <label class="block text-gray-700 font-medium">
+    Title:
+    <input
+      [(ngModel)]="model.title"
+      name="title"
+      required
+      class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-400"
+    >
+  </label>
+  <label class="block text-gray-700 font-medium">
+    Status:
+    <select
+      [(ngModel)]="model.status"
+      name="status"
+      class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-400"
+    >
       <option value="todo">To Do</option>
       <option value="done">Done</option>
     </select>
-  </label><br>
-  <label>Due Date: <input type="date" [(ngModel)]="model.dueDate" name="dueDate"></label><br>
-  <button type="submit">Save</button>
+  </label>
+  <label class="block text-gray-700 font-medium">
+    Due Date:
+    <input
+      type="date"
+      [(ngModel)]="model.dueDate"
+      name="dueDate"
+      class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-400"
+    >
+  </label>
+  <button
+    mat-flat-button
+    type="submit"
+    class="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded transition"
+  >
+    Save
+  </button>
 </form>
